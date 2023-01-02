@@ -5,6 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Station(
+    val uuid: String,
     val name: String,
     val imageUrl: String,
     val audioSourceUrl: String,

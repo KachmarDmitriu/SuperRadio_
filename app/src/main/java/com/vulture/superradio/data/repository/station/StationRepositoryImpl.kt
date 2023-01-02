@@ -35,4 +35,17 @@ class StationRepositoryImpl @Inject constructor(
         }
     }
 
+
+    override fun markAsFavourite()
+    {
+
+    }
+
+
+    override fun removeFromFavourite()
+    {
+
+    }
+
+
 }

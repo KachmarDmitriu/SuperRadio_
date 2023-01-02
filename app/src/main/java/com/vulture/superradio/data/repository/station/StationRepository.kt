@@ -6,4 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface StationRepository {
     fun getStations() : Flow<ResponseState<List<Station>>>
+    fun markAsFavourite()
+    fun removeFromFavourite()
+
 }
