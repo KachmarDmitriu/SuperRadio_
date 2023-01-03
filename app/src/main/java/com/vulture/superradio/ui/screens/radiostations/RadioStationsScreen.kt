@@ -50,7 +50,7 @@ fun RadioStationsScreen(
                     )
                 },
                 onFavoriteClick = {
-                    TODO("favorite click")
+                    TODO("favorite click" )   //TODO тык по кнопке избранного
                 })
         }
         is RadioStationsError -> {

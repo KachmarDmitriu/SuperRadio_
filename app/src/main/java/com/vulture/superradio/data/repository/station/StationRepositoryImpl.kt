@@ -15,6 +15,7 @@ class StationRepositoryImpl @Inject constructor(
     private val api: StationsApi
 ) : StationRepository {
 
+    private val favouriteStations : List<String>
     override fun getStations(): Flow<ResponseState<List<Station>>> = flow {
         emit(Loading())
         val response = api.getStations()
@@ -28,6 +29,8 @@ class StationRepositoryImpl @Inject constructor(
                 it.imageUrl.isNotEmpty() && it.name.isNotEmpty() && it.audioSourceUrl.isNotEmpty()
             }
 
+                //TODO потрібно пройтись по всіх станціях і змінити isFavourite на true якщо uuid станції є в нашому списку лайкнутих
+
             emit(Success(stationsFiltered))
 
         } else {
@@ -38,13 +41,13 @@ class StationRepositoryImpl @Inject constructor(
 
     override fun markAsFavourite()
     {
-
+        // TODO добавление в избранное
     }
 
 
     override fun removeFromFavourite()
     {
-
+        //TODO удаление из избранного
     }
 
 
