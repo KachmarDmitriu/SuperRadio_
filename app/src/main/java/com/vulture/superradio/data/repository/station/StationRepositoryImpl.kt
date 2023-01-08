@@ -15,7 +15,8 @@ class StationRepositoryImpl @Inject constructor(
     private val api: StationsApi
 ) : StationRepository {
 
-    private val favouriteStations : List<String>
+    private val favouriteStations : List<String> = listOf<String>()
+
     override fun getStations(): Flow<ResponseState<List<Station>>> = flow {
         emit(Loading())
         val response = api.getStations()
@@ -39,14 +40,16 @@ class StationRepositoryImpl @Inject constructor(
     }
 
 
-    override fun markAsFavourite()
-    {
+    private fun markAsFavourite(favouriteStations: List<String>, station: Station)
+     {
+         favouriteStations.add() =  station
         // TODO добавление в избранное
     }
 
 
-    override fun removeFromFavourite()
+    fun removeFromFavourite(favouriteStations: List<String>, station: Station)
     {
+        favouriteStations.removeAt() = station
         //TODO удаление из избранного
     }
 

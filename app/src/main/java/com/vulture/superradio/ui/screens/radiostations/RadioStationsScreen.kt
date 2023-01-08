@@ -50,7 +50,14 @@ fun RadioStationsScreen(
                     )
                 },
                 onFavoriteClick = {
-                    TODO("favorite click" )   //TODO тык по кнопке избранного
+                        station ->
+                    navigator.navigate(
+                       PlayerScreenDestination(        //х.з. или вообще правильно
+                            station = station
+                        )
+
+                    )
+                //TODO тык по кнопке избранного
                 })
         }
         is RadioStationsError -> {
