@@ -52,7 +52,7 @@ fun RadioStationsScreen(
                 onFavoriteClick = {
                         station ->
                     navigator.navigate(
-                       PlayerScreenDestination(        //х.з. или вообще правильно
+                       PlayerScreenDestination(
                             station = station
                         )
 
