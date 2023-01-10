@@ -54,9 +54,12 @@ fun RadioStationsScreen(
                     navigator.navigate(
                        PlayerScreenDestination(
                             station = station
+
                         )
 
                     )
+                    Favorite()
+
                 //TODO тык по кнопке избранного
                 })
         }

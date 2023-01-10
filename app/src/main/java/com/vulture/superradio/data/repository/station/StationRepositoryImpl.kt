@@ -40,16 +40,18 @@ class StationRepositoryImpl @Inject constructor(
     }
 
 
-    private fun markAsFavourite(favouriteStations: MutableList<String>, station: Station)
+     override fun markAsFavourite(station: Station)
      {
          favouriteStations.add(station.uuid)
+         station.isFavourite = true
         // TODO добавление в избранное
     }
 
 
-    fun removeFromFavourite(favouriteStations: MutableList<String>, station: Station)
+    override fun removeFromFavourite(station: Station)
     {
         favouriteStations.remove(station.uuid)
+        station.isFavourite = false
         //TODO удаление из избранного
     }
 

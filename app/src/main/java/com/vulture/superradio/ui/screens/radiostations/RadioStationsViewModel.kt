@@ -3,6 +3,8 @@ package com.vulture.superradio.ui.screens.radiostations
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vulture.superradio.data.repository.station.StationRepository
+import com.vulture.superradio.data.repository.station.StationRepositoryImpl
+import com.vulture.superradio.ui.models.Station
 import com.vulture.superradio.utils.DataError
 import com.vulture.superradio.utils.Loading
 import com.vulture.superradio.utils.Success
@@ -48,6 +50,24 @@ class RadioStationsViewModel @Inject constructor(
         }
     }
 
+
+  fun Favourite(station: Station)
+  { if (station.isFavourite == false)
+    {
+          viewModelScope.launch {
+          stationRepository
+              .markAsFavourite(station)
+        }
+    }
+    else
+    {
+
+        viewModelScope.launch {
+            stationRepository
+                .removeFromFavourite(station)
+        }
+    }
+  }
 
 
 }
