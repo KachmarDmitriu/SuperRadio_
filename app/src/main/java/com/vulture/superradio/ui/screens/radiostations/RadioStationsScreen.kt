@@ -58,7 +58,7 @@ fun RadioStationsScreen(
                         )
 
                     )
-                    Favorite()
+                    viewModel.Favourite(station)
 
                 //TODO тык по кнопке избранного
                 })
