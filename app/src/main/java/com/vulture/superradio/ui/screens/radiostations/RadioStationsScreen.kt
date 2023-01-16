@@ -51,14 +51,7 @@ fun RadioStationsScreen(
                 },
                 onFavoriteClick = {
                         station ->
-                    navigator.navigate(
-                       PlayerScreenDestination(
-                            station = station
-
-                        )
-
-                    )
-                    viewModel.Favourite(station)
+                        viewModel.Favourite(station)
 
                 //TODO тык по кнопке избранного
                 })
